@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dfba61b6-19f1-4bd3-9fff-f7ebfd3199eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="imsbasicservice.wsdl" MetadataType="Wsdl" ID="0b6974a9-0f08-4053-9f7c-447936a6ddf7" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="imsbasicservice.xsd" MetadataType="Schema" ID="99f57ea0-fee8-4bc7-b808-9707511920fe" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" />
+    <MetadataFile FileName="imsbasicservice1.xsd" MetadataType="Schema" ID="d554cfc2-c215-4b75-a063-be2fc827581f" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd6" />
+    <MetadataFile FileName="imsbasicservice2.xsd" MetadataType="Schema" ID="438b9945-3b9c-47c2-b943-05a8ea330b48" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd2" />
+    <MetadataFile FileName="imsbasicservice3.xsd" MetadataType="Schema" ID="68d8df04-db49-48fe-8850-24eaf132ffc5" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd3" />
+    <MetadataFile FileName="imsbasicservice4.xsd" MetadataType="Schema" ID="31167eb0-6bee-461f-b628-20e9dbdde410" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd4" />
+    <MetadataFile FileName="imsbasicservice5.xsd" MetadataType="Schema" ID="f3226513-4015-4cd4-bc91-ed8e1889f2a3" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd5" />
+    <MetadataFile FileName="imsbasicservice1.wsdl" MetadataType="Wsdl" ID="e147d746-dd6c-4822-8047-39a5bcfd58a4" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl=wsdl2" />
+    <MetadataFile FileName="imsbasicservice6.xsd" MetadataType="Schema" ID="7bc87966-3b90-4bbc-b83d-644a405151c2" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd7" />
+    <MetadataFile FileName="imsbasicservice7.xsd" MetadataType="Schema" ID="159766ec-75ea-4658-95ba-e0accd61e953" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd8" />
+    <MetadataFile FileName="imsbasicservice2.wsdl" MetadataType="Wsdl" ID="2f64bd50-d208-4340-a6fa-0c8380d26eec" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl=wsdl3" />
+    <MetadataFile FileName="imsbasicservice3.wsdl" MetadataType="Wsdl" ID="946866ce-b734-4511-a394-a74a9620e187" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="IMSService.wsdl" MetadataType="Wsdl" ID="0d175b16-b27d-4c79-9f28-a4fbfad5cc31" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?wsdl" />
+    <MetadataFile FileName="imsbasicservice8.xsd" MetadataType="Schema" ID="864a600f-98f4-4193-b3e0-b5a3d335cd20" SourceId="1" SourceUrl="imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

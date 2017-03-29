@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/Imports">
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd3" namespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd2" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createPersonHeaderRequest">
+    <wsdl:part xmlns:q1="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createPersonRequest" element="q1:createPersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="createPersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q2="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q2:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createPersonHeaderResponse">
+    <wsdl:part xmlns:q3="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createPersonResponse" element="q3:createPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q4="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q4:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonHeaderRequest">
+    <wsdl:part xmlns:q5="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createByProxyPersonRequest" element="q5:createByProxyPersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q6="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q6:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonHeaderResponse">
+    <wsdl:part xmlns:q7="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createByProxyPersonResponse" element="q7:createByProxyPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q8="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q8:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonHeaderRequest">
+    <wsdl:part xmlns:q9="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="deletePersonRequest" element="q9:deletePersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q10="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q10:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonHeaderResponse">
+    <wsdl:part xmlns:q11="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="deletePersonResponse" element="q11:deletePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q12="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q12:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonHeaderRequest">
+    <wsdl:part xmlns:q13="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonRequest" element="q13:readPersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="readPersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q14="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q14:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonHeaderResponse">
+    <wsdl:part xmlns:q15="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonResponse" element="q15:readPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="readPersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q16="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q16:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonHeaderRequest">
+    <wsdl:part xmlns:q17="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="updatePersonRequest" element="q17:updatePersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q18="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q18:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonHeaderResponse">
+    <wsdl:part xmlns:q19="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="updatePersonResponse" element="q19:updatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q20="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q20:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonHeaderRequest">
+    <wsdl:part xmlns:q21="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="replacePersonRequest" element="q21:replacePersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q22="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q22:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonHeaderResponse">
+    <wsdl:part xmlns:q23="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="replacePersonResponse" element="q23:replacePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q24="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q24:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changePersonIdentifierHeaderRequest">
+    <wsdl:part xmlns:q25="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="changePersonIdentifierRequest" element="q25:changePersonIdentifierRequest" />
+  </wsdl:message>
+  <wsdl:message name="changePersonIdentifierHeaderRequest_Headers">
+    <wsdl:part xmlns:q26="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q26:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changePersonIdentifierHeaderResponse">
+    <wsdl:part xmlns:q27="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="changePersonIdentifierResponse" element="q27:changePersonIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePersonIdentifierHeaderResponse_Headers">
+    <wsdl:part xmlns:q28="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q28:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createPersonsHeaderRequest">
+    <wsdl:part xmlns:q29="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createPersonsRequest" element="q29:createPersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createPersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q30="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q30:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createPersonsHeaderResponse">
+    <wsdl:part xmlns:q31="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createPersonsResponse" element="q31:createPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q32="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q32:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonsHeaderRequest">
+    <wsdl:part xmlns:q33="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createByProxyPersonsRequest" element="q33:createByProxyPersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q34="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q34:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonsHeaderResponse">
+    <wsdl:part xmlns:q35="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="createByProxyPersonsResponse" element="q35:createByProxyPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyPersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q36="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q36:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonsHeaderRequest">
+    <wsdl:part xmlns:q37="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="deletePersonsRequest" element="q37:deletePersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q38="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q38:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonsHeaderResponse">
+    <wsdl:part xmlns:q39="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="deletePersonsResponse" element="q39:deletePersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deletePersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q40="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q40:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsHeaderRequest">
+    <wsdl:part xmlns:q41="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonsRequest" element="q41:readPersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q42="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q42:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsHeaderResponse">
+    <wsdl:part xmlns:q43="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonsResponse" element="q43:readPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q44="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q44:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsForGroupHeaderRequest">
+    <wsdl:part xmlns:q45="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonsForGroupRequest" element="q45:readPersonsForGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsForGroupHeaderRequest_Headers">
+    <wsdl:part xmlns:q46="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q46:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsForGroupHeaderResponse">
+    <wsdl:part xmlns:q47="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="readPersonsForGroupResponse" element="q47:readPersonsForGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="readPersonsForGroupHeaderResponse_Headers">
+    <wsdl:part xmlns:q48="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q48:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonsHeaderRequest">
+    <wsdl:part xmlns:q49="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="updatePersonsRequest" element="q49:updatePersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q50="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q50:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonsHeaderResponse">
+    <wsdl:part xmlns:q51="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="updatePersonsResponse" element="q51:updatePersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q52="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q52:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonsHeaderRequest">
+    <wsdl:part xmlns:q53="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="replacePersonsRequest" element="q53:replacePersonsRequest" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonsHeaderRequest_Headers">
+    <wsdl:part xmlns:q54="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q54:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonsHeaderResponse">
+    <wsdl:part xmlns:q55="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="replacePersonsResponse" element="q55:replacePersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="replacePersonsHeaderResponse_Headers">
+    <wsdl:part xmlns:q56="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q56:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changePersonsIdentifierHeaderRequest">
+    <wsdl:part xmlns:q57="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="changePersonsIdentifierRequest" element="q57:changePersonsIdentifierRequest" />
+  </wsdl:message>
+  <wsdl:message name="changePersonsIdentifierHeaderRequest_Headers">
+    <wsdl:part xmlns:q58="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q58:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changePersonsIdentifierHeaderResponse">
+    <wsdl:part xmlns:q59="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" name="changePersonsIdentifierResponse" element="q59:changePersonsIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePersonsIdentifierHeaderResponse_Headers">
+    <wsdl:part xmlns:q60="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q60:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:portType name="PersonManagementServiceSync">
+    <wsdl:operation name="createPerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/createPerson" name="createPersonHeaderRequest" message="tns:createPersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/createPersonResponse" name="createPersonHeaderResponse" message="tns:createPersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createByProxyPerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/createByProxyPerson" name="createByProxyPersonHeaderRequest" message="tns:createByProxyPersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/createByProxyPersonResponse" name="createByProxyPersonHeaderResponse" message="tns:createByProxyPersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/deletePerson" name="deletePersonHeaderRequest" message="tns:deletePersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/deletePersonResponse" name="deletePersonHeaderResponse" message="tns:deletePersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readPerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/readPerson" name="readPersonHeaderRequest" message="tns:readPersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/readPersonResponse" name="readPersonHeaderResponse" message="tns:readPersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/updatePerson" name="updatePersonHeaderRequest" message="tns:updatePersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/updatePersonResponse" name="updatePersonHeaderResponse" message="tns:updatePersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="replacePerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/replacePerson" name="replacePersonHeaderRequest" message="tns:replacePersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/replacePersonResponse" name="replacePersonHeaderResponse" message="tns:replacePersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonIdentifier">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/changePersonIdentifier" name="changePersonIdentifierHeaderRequest" message="tns:changePersonIdentifierHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/changePersonIdentifierResponse" name="changePersonIdentifierHeaderResponse" message="tns:changePersonIdentifierHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/createPersons" name="createPersonsHeaderRequest" message="tns:createPersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/createPersonsResponse" name="createPersonsHeaderResponse" message="tns:createPersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createByProxyPersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/createByProxyPersons" name="createByProxyPersonsHeaderRequest" message="tns:createByProxyPersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/createByProxyPersonsResponse" name="createByProxyPersonsHeaderResponse" message="tns:createByProxyPersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/deletePersons" name="deletePersonsHeaderRequest" message="tns:deletePersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/deletePersonsResponse" name="deletePersonsHeaderResponse" message="tns:deletePersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readPersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/readPersons" name="readPersonsHeaderRequest" message="tns:readPersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/readPersonsResponse" name="readPersonsHeaderResponse" message="tns:readPersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readPersonsForGroup">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/readPersonsForGroup" name="readPersonsForGroupHeaderRequest" message="tns:readPersonsForGroupHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/readPersonsForGroupResponse" name="readPersonsForGroupHeaderResponse" message="tns:readPersonsForGroupHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/updatePersons" name="updatePersonsHeaderRequest" message="tns:updatePersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/updatePersonsResponse" name="updatePersonsHeaderResponse" message="tns:updatePersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="replacePersons">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/replacePersons" name="replacePersonsHeaderRequest" message="tns:replacePersonsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/replacePersonsResponse" name="replacePersonsHeaderResponse" message="tns:replacePersonsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changePersonsIdentifier">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/pms/changePersonsIdentifier" name="changePersonsIdentifierHeaderRequest" message="tns:changePersonsIdentifierHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/pms/wsdl/imsPersonManAbstractSync_v1p0/PersonManagementServiceSync/changePersonsIdentifierResponse" name="changePersonsIdentifierHeaderResponse" message="tns:changePersonsIdentifierHeaderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

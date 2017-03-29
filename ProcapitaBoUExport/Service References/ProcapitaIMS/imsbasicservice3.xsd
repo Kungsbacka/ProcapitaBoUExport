@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:element name="syncRequestHeaderInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="syncResponseHeaderInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string" />
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="statusInfoSet" type="tns:StatusInfoSetDType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="statusInfo" type="tns:StatusInfoDType" />
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StatusInfoSetDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="statusInfo" type="tns:StatusInfoDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusInfoDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="codeMajor">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="success" />
+            <xs:enumeration value="unsupported" />
+            <xs:enumeration value="failure" />
+            <xs:enumeration value="processing" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="severity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="status" />
+            <xs:enumeration value="warning" />
+            <xs:enumeration value="error" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="codeMinor" type="tns:ArrayOfCodeMinorField" />
+      <xs:element minOccurs="0" maxOccurs="1" name="messageIdRef" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="operationIdRef" type="xs:string" />
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="description" type="q1:LangStringDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCodeMinorField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="codeMinorField">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="codeMinorName" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="codeMinorValue" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="syncRequestHeaderInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="syncResponseHeaderInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="messageIdentifier" type="xs:string" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="statusInfoSet" type="tns:StatusInfoSetDType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="statusInfo" type="tns:StatusInfoDType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

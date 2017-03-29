@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:complexType name="MembershipDType">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="groupSourcedId" type="q1:groupSourcedId" />
+      <xs:element minOccurs="0" maxOccurs="1" name="member" type="tns:MemberDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MemberDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="memberSourcedId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q2:identifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="idType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="Person" />
+            <xs:enumeration value="Group" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="role" type="tns:RoleDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RoleDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="roleType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Learner" />
+            <xs:enumeration value="Instructor" />
+            <xs:enumeration value="ContentDeveloper" />
+            <xs:enumeration value="Member" />
+            <xs:enumeration value="Manager" />
+            <xs:enumeration value="Mentor" />
+            <xs:enumeration value="Administrator" />
+            <xs:enumeration value="TeachingAssistant" />
+            <xs:enumeration value="01" />
+            <xs:enumeration value="02" />
+            <xs:enumeration value="03" />
+            <xs:enumeration value="04" />
+            <xs:enumeration value="05" />
+            <xs:enumeration value="06" />
+            <xs:enumeration value="07" />
+            <xs:enumeration value="08" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="subRole" type="xs:string" />
+      <xs:element xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="recordInfo" type="q3:RecordMetaDataDType" />
+      <xs:element xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="userId" type="q4:UserIdDType" />
+      <xs:element xmlns:q5="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="timeFrame" type="q5:TimeFrameDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="status" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dateTime" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q6:email" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="interimResult" type="tns:ResultDType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="finalResult" type="tns:ResultDType" />
+      <xs:element xmlns:q7="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q7:dataSource" />
+      <xs:element xmlns:q8="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="extension" type="q8:ArrayOfExtensionField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="resultType" type="xs:string" />
+      <xs:element xmlns:q9="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="recordInfo" type="q9:RecordMetaDataDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="values" type="tns:ValuesDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="mode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="result" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValuesDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="valueType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+            <xs:enumeration value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="1" maxOccurs="1" name="min" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="list" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="max" nillable="true" type="xs:decimal" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

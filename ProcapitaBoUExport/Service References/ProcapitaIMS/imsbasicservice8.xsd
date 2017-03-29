@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="identifier" type="xs:string" />
+  <xs:complexType name="RecordMetaDataDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="comments" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="email" type="xs:string" />
+  <xs:element name="URL" type="xs:string" />
+  <xs:complexType name="UserIdDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="userIdValue" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="userIdType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="passWord" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pwEncryptionType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="authenticationType" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dataSource" type="xs:string" />
+  <xs:complexType name="ArrayOfExtensionField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="extensionField">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="fieldName" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="fieldType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="fieldValue" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LangStringDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="language">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="en-US" />
+            <xs:enumeration value="en-GB" />
+            <xs:enumeration value="aa" />
+            <xs:enumeration value="ab" />
+            <xs:enumeration value="af" />
+            <xs:enumeration value="am" />
+            <xs:enumeration value="ar" />
+            <xs:enumeration value="as" />
+            <xs:enumeration value="ay" />
+            <xs:enumeration value="az" />
+            <xs:enumeration value="ba" />
+            <xs:enumeration value="be" />
+            <xs:enumeration value="bg" />
+            <xs:enumeration value="bh" />
+            <xs:enumeration value="bi" />
+            <xs:enumeration value="bn" />
+            <xs:enumeration value="bo" />
+            <xs:enumeration value="br" />
+            <xs:enumeration value="aa" />
+            <xs:enumeration value="ca" />
+            <xs:enumeration value="co" />
+            <xs:enumeration value="cs" />
+            <xs:enumeration value="cy" />
+            <xs:enumeration value="da" />
+            <xs:enumeration value="de" />
+            <xs:enumeration value="dz" />
+            <xs:enumeration value="el" />
+            <xs:enumeration value="eo" />
+            <xs:enumeration value="es" />
+            <xs:enumeration value="et" />
+            <xs:enumeration value="eu" />
+            <xs:enumeration value="fa" />
+            <xs:enumeration value="fi" />
+            <xs:enumeration value="fj" />
+            <xs:enumeration value="fo" />
+            <xs:enumeration value="fr" />
+            <xs:enumeration value="fy" />
+            <xs:enumeration value="ga" />
+            <xs:enumeration value="gd" />
+            <xs:enumeration value="gl" />
+            <xs:enumeration value="gn" />
+            <xs:enumeration value="gu" />
+            <xs:enumeration value="ha" />
+            <xs:enumeration value="he" />
+            <xs:enumeration value="hi" />
+            <xs:enumeration value="hr" />
+            <xs:enumeration value="hu" />
+            <xs:enumeration value="hy" />
+            <xs:enumeration value="ia" />
+            <xs:enumeration value="id" />
+            <xs:enumeration value="ie" />
+            <xs:enumeration value="ik" />
+            <xs:enumeration value="is" />
+            <xs:enumeration value="it" />
+            <xs:enumeration value="iu" />
+            <xs:enumeration value="ja" />
+            <xs:enumeration value="jw" />
+            <xs:enumeration value="ka" />
+            <xs:enumeration value="kk" />
+            <xs:enumeration value="kl" />
+            <xs:enumeration value="km" />
+            <xs:enumeration value="kn" />
+            <xs:enumeration value="ko" />
+            <xs:enumeration value="ks" />
+            <xs:enumeration value="ku" />
+            <xs:enumeration value="ky" />
+            <xs:enumeration value="la" />
+            <xs:enumeration value="ln" />
+            <xs:enumeration value="lo" />
+            <xs:enumeration value="lt" />
+            <xs:enumeration value="lv" />
+            <xs:enumeration value="mg" />
+            <xs:enumeration value="mi" />
+            <xs:enumeration value="mk" />
+            <xs:enumeration value="ml" />
+            <xs:enumeration value="mn" />
+            <xs:enumeration value="mo" />
+            <xs:enumeration value="mr" />
+            <xs:enumeration value="ms" />
+            <xs:enumeration value="mt" />
+            <xs:enumeration value="my" />
+            <xs:enumeration value="na" />
+            <xs:enumeration value="ne" />
+            <xs:enumeration value="nl" />
+            <xs:enumeration value="no" />
+            <xs:enumeration value="oc" />
+            <xs:enumeration value="om" />
+            <xs:enumeration value="or" />
+            <xs:enumeration value="pa" />
+            <xs:enumeration value="pl" />
+            <xs:enumeration value="ps" />
+            <xs:enumeration value="pt" />
+            <xs:enumeration value="qu" />
+            <xs:enumeration value="rm" />
+            <xs:enumeration value="rn" />
+            <xs:enumeration value="ro" />
+            <xs:enumeration value="ru" />
+            <xs:enumeration value="rw" />
+            <xs:enumeration value="sa" />
+            <xs:enumeration value="sd" />
+            <xs:enumeration value="sg" />
+            <xs:enumeration value="sh" />
+            <xs:enumeration value="si" />
+            <xs:enumeration value="sk" />
+            <xs:enumeration value="sl" />
+            <xs:enumeration value="sm" />
+            <xs:enumeration value="sn" />
+            <xs:enumeration value="so" />
+            <xs:enumeration value="sq" />
+            <xs:enumeration value="sr" />
+            <xs:enumeration value="ss" />
+            <xs:enumeration value="st" />
+            <xs:enumeration value="su" />
+            <xs:enumeration value="sv" />
+            <xs:enumeration value="sw" />
+            <xs:enumeration value="ta" />
+            <xs:enumeration value="te" />
+            <xs:enumeration value="tg" />
+            <xs:enumeration value="th" />
+            <xs:enumeration value="ti" />
+            <xs:enumeration value="tk" />
+            <xs:enumeration value="tl" />
+            <xs:enumeration value="tn" />
+            <xs:enumeration value="to" />
+            <xs:enumeration value="tr" />
+            <xs:enumeration value="ts" />
+            <xs:enumeration value="tt" />
+            <xs:enumeration value="tw" />
+            <xs:enumeration value="ug" />
+            <xs:enumeration value="uk" />
+            <xs:enumeration value="ur" />
+            <xs:enumeration value="uz" />
+            <xs:enumeration value="vi" />
+            <xs:enumeration value="vo" />
+            <xs:enumeration value="wo" />
+            <xs:enumeration value="xh" />
+            <xs:enumeration value="yi" />
+            <xs:enumeration value="yo" />
+            <xs:enumeration value="za" />
+            <xs:enumeration value="zh" />
+            <xs:enumeration value="zu" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfIdentifierPairDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="identifierPair" type="tns:IdentifierPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdentifierPairDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="firstId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="secondId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimeFrameDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="begin" nillable="true" type="tns:RestrictDateDType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="end" nillable="true" type="tns:RestrictDateDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adminPeriod" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RestrictDateDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="date" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="restrict" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

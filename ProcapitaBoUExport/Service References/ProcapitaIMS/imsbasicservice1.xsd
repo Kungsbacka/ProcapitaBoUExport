@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd7" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" />
+  <xs:complexType name="personSourcedId">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q1:identifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q2:sourcedId" />
+        <xs:element xmlns:q3="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q3:MembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createMembershipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createByProxyMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q4:MembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createByProxyMembershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q5:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q6:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteMembershipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="readMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q7:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readMembershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q8:MembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q9:sourcedId" />
+        <xs:element xmlns:q10="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q10:MembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateMembershipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="replaceMembershipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q11:sourcedId" />
+        <xs:element xmlns:q12="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q12:MembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="replaceMembershipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="changeMembershipIdentifierRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q13:sourcedId" />
+        <xs:element xmlns:q14="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="newSourcedId" type="q14:newSourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeMembershipIdentifierResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet" type="tns:ArrayOfMembershipIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfMembershipIdPairDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="membershipIdPair" type="tns:MembershipIdPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MembershipIdPairDType">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q15:sourcedId" />
+      <xs:element xmlns:q16="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="membership" type="q16:MembershipDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createMembershipsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createByProxyMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet" type="tns:ArrayOfMembershipIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createByProxyMembershipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q17:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q18:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteMembershipsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="readMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q19:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readMembershipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipSet" type="tns:ArrayOfMembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfMembershipDType">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="membership" type="q20:MembershipDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="readMembershipsForPersonRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="personSourcedId">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element xmlns:q21="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q21:identifier" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readMembershipsForPersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipSet" type="tns:ArrayOfMembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readMembershipsForGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="groupSourcedId" type="q22:groupSourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readMembershipsForGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipSet" type="tns:ArrayOfMembershipDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet" type="tns:ArrayOfMembershipIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateMembershipsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="replaceMembershipsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="membershipIdPairSet" type="tns:ArrayOfMembershipIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="replaceMembershipsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="changeMembershipsIdentifierRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="pairSourcedIdSet" type="q23:ArrayOfIdentifierPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeMembershipsIdentifierResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

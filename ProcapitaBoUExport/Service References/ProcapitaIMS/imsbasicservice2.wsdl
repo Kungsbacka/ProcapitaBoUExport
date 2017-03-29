@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.tieto.com/ims/extensions" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tieto.com/ims/extensions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tieto.com/ims/extensions/Imports">
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd8" namespace="http://www.tieto.com/ims/extensions" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd2" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd3" namespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd4" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd5" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd6" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd7" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExtensionServiceSync_extReadBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:extReadBatch" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extReadBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extVerifySystemRunning_InputMessage">
+    <wsdl:part name="parameters" element="tns:extVerifySystemRunning" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extVerifySystemRunning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extVerifySystemRunningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadAllMemberships_InputMessage">
+    <wsdl:part name="parameters" element="tns:extReadAllMemberships" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadAllMemberships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extReadAllMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadUpdatedMemberships_InputMessage">
+    <wsdl:part name="parameters" element="tns:extReadUpdatedMemberships" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadUpdatedMemberships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extReadUpdatedMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadAllObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:extReadAllObjects" />
+  </wsdl:message>
+  <wsdl:message name="ExtensionServiceSync_extReadAllObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:extReadAllObjectsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExtensionServiceSync">
+    <wsdl:operation name="extReadBatch">
+      <wsdl:input wsaw:Action="http://www.tieto.com/soap/ims/extensions/readBatch" message="tns:ExtensionServiceSync_extReadBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tieto.com/ims/extensions/ExtensionServiceSync/extReadBatchResponse" message="tns:ExtensionServiceSync_extReadBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="extVerifySystemRunning">
+      <wsdl:input wsaw:Action="http://www.tieto.com/soap/ims/extensions/verifyDatabase" message="tns:ExtensionServiceSync_extVerifySystemRunning_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tieto.com/ims/extensions/ExtensionServiceSync/extVerifySystemRunningResponse" message="tns:ExtensionServiceSync_extVerifySystemRunning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="extReadAllMemberships">
+      <wsdl:input wsaw:Action="http://www.tieto.com/soap/ims/extensions/extReadAllMemberships" message="tns:ExtensionServiceSync_extReadAllMemberships_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tieto.com/ims/extensions/ExtensionServiceSync/extReadAllMembershipsResponse" message="tns:ExtensionServiceSync_extReadAllMemberships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="extReadUpdatedMemberships">
+      <wsdl:input wsaw:Action="http://www.tieto.com/soap/ims/extensions/extReadUpdatedMemberships" message="tns:ExtensionServiceSync_extReadUpdatedMemberships_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tieto.com/ims/extensions/ExtensionServiceSync/extReadUpdatedMembershipsResponse" message="tns:ExtensionServiceSync_extReadUpdatedMemberships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="extReadAllObjects">
+      <wsdl:input wsaw:Action="http://www.tieto.com/soap/ims/extensions/extReadAllObjects" message="tns:ExtensionServiceSync_extReadAllObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.tieto.com/ims/extensions/ExtensionServiceSync/extReadAllObjectsResponse" message="tns:ExtensionServiceSync_extReadAllObjects_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

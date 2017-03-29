@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:complexType name="PersonDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="formatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="tns:NameDType" />
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="recordInfo" type="q1:RecordMetaDataDType" />
+      <xs:element xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q2:email" />
+      <xs:element xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q3:URL" />
+      <xs:element minOccurs="0" maxOccurs="1" name="systemRole">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="SysAdmin" />
+            <xs:enumeration value="SysSupport" />
+            <xs:enumeration value="Creator" />
+            <xs:enumeration value="AccountAdmin" />
+            <xs:enumeration value="User" />
+            <xs:enumeration value="Administrator" />
+            <xs:enumeration value="None" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="userId" type="q4:UserIdDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="address" type="tns:AddressDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="demographics" type="tns:DemographicsDType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="institutionRole" type="tns:InstitutionRoleDType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tel" type="tns:TelDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="photo" type="tns:PhotoDType" />
+      <xs:element xmlns:q5="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q5:dataSource" />
+      <xs:element xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="extension" type="q6:ArrayOfExtensionField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NameDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="nameType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="partName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="namePartType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="namePartValue" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="pobox" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extadd" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="locality" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="region" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="postcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="country" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="street" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DemographicsDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="gender">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Male" />
+            <xs:enumeration value="Female" />
+            <xs:enumeration value="Gender" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="disability" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="bday" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InstitutionRoleDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="institutionRoleType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Student" />
+            <xs:enumeration value="Faculty" />
+            <xs:enumeration value="Member" />
+            <xs:enumeration value="Learner" />
+            <xs:enumeration value="Instructor" />
+            <xs:enumeration value="Mentor" />
+            <xs:enumeration value="Staff" />
+            <xs:enumeration value="Alumni" />
+            <xs:enumeration value="ProspectiveStudent" />
+            <xs:enumeration value="Guest" />
+            <xs:enumeration value="Other" />
+            <xs:enumeration value="Administrator" />
+            <xs:enumeration value="Observer" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="primaryRoleType" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TelDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="telType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+            <xs:enumeration value="Voice" />
+            <xs:enumeration value="Fax" />
+            <xs:enumeration value="Mobile" />
+            <xs:enumeration value="Pager" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="telValue" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PhotoDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="imgType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extRef" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

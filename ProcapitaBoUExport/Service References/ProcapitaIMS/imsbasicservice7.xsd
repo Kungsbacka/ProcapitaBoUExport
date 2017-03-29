@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.tieto.com/ims/extensions" elementFormDefault="qualified" targetNamespace="http://www.tieto.com/ims/extensions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd3" namespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd7" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd5" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd4" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" />
+  <xs:element name="extReadBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:extReadBatchHeaderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadBatchHeaderRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="SearchDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Unit" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UnitDomain" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CreateSecondarySchoolUnitMembership" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RemoveUsersWithEmptyEmailGen" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" minOccurs="0" maxOccurs="1" name="syncRequestHeaderInfo" type="q1:syncRequestHeaderInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="extReadBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="extReadBatchResult" type="tns:extReadBatchHeaderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadBatchHeaderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Enterprice" type="tns:Enterprise" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HeaderResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" minOccurs="0" maxOccurs="1" name="syncResponseHeaderInfo" type="q2:syncResponseHeaderInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Enterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Memberships" type="tns:ArrayOfMembershipDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Groups" type="tns:ArrayOfGroupDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Persons" type="tns:ArrayOfPersonIdPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMembershipDType">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="MembershipDType" nillable="true" type="q3:MembershipDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfGroupDType">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="GroupDType" nillable="true" type="q4:GroupDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPersonIdPairDType">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="PersonIdPairDType" nillable="true" type="q5:PersonIdPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="extVerifySystemRunning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:extVerifySystemRunningHeaderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extVerifySystemRunningHeaderRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extVerifySystemRunningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="extVerifySystemRunningResult" type="tns:extVerifySystemRunningHeaderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extVerifySystemRunningHeaderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="IsOk" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Error" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extReadAllMemberships">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:extReadAllMembershipsHeaderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadAllMembershipsHeaderRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SecondarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AdultEducationReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UnitFilter" type="tns:unitFilter" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SearchDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="readOptions">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Students" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Staff" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StudentClasses" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StudentGroups" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unitFilter">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UnitFilterType" type="tns:unitFilterType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitNames" type="tns:ArrayOfString" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="unitFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Include" />
+      <xs:enumeration value="Exclude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="extReadAllMembershipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="extReadAllMembershipsResult" type="tns:extReadAllMembershipsHeaderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadAllMembershipsHeaderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Memberships" type="tns:ArrayOfMembershipDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extReadUpdatedMemberships">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:extReadUpdatedMembershipsHeaderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadUpdatedMembershipsHeaderRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SecondarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AdultEducationReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UnitFilter" type="tns:unitFilter" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SearchFromDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SearchToDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extReadUpdatedMembershipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="extReadUpdatedMembershipsResult" type="tns:extReadUpdatedMembershipsHeaderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadUpdatedMembershipsHeaderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ChangedMemberships" type="tns:ArrayOfMembershipDType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StartedMemberships" type="tns:ArrayOfMembershipDType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EndedMemberships" type="tns:ArrayOfMembershipDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extReadAllObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:extReadAllObjectsHeaderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadAllObjectsHeaderRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SecondarySchoolReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AdultEducationReadOptions" type="tns:readOptions" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UnitFilter" type="tns:unitFilter" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SearchDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="extReadAllObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="extReadAllObjectsResult" type="tns:extReadAllObjectsHeaderResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="extReadAllObjectsHeaderResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:HeaderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Memberships" type="tns:ArrayOfMembershipDType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Groups" type="tns:ArrayOfGroupIdPairDType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Persons" type="tns:ArrayOfPersonIdPairDType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfGroupIdPairDType">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="GroupIdPairDType" nillable="true" type="q6:GroupIdPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

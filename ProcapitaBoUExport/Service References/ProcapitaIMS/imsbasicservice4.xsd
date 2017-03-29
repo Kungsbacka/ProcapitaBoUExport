@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd5" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd6" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" />
+  <xs:element name="createGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q1:sourcedId" />
+        <xs:element xmlns:q2="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q2:GroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createGroupResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createByProxyGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q3:GroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createByProxyGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q4:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q5:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="deleteGroupRelationshipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q6:sourcedId" />
+        <xs:element minOccurs="0" maxOccurs="1" name="relationId">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element xmlns:q7="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q7:identifier" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupRelationshipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="readGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q8:sourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q9:GroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q10:sourcedId" />
+        <xs:element xmlns:q11="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q11:GroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroupResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="replaceGroupRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q12:sourcedId" />
+        <xs:element xmlns:q13="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q13:GroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="replaceGroupResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="changeGroupIdentifierRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q14:sourcedId" />
+        <xs:element xmlns:q15="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="newSourcedId" type="q15:newSourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeGroupIdentifierResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupIdPairSet" type="tns:ArrayOfGroupIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGroupIdPairDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="groupIdPair" type="tns:GroupIdPairDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GroupIdPairDType">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedId" type="q16:sourcedId" />
+      <xs:element xmlns:q17="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="1" name="group" type="q17:GroupDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createGroupsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="createByProxyGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupSet" type="tns:ArrayOfGroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGroupDType">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" minOccurs="0" maxOccurs="unbounded" name="group" type="q18:GroupDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createByProxyGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q19:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q20:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="deleteGroupsRelationshipRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="pairSourcedIdSet" type="q21:ArrayOfIdentifierPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupsRelationshipResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="readGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="sourcedIdSet" type="q22:ArrayOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupSet" type="tns:ArrayOfGroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readGroupsForPersonRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" minOccurs="0" maxOccurs="1" name="personSourcedId" type="q23:personSourcedId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="readGroupsForPersonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupSet" type="tns:ArrayOfGroupDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupIdPairSet" type="tns:ArrayOfGroupIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroupsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="replaceGroupsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="groupIdPairSet" type="tns:ArrayOfGroupIdPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="replaceGroupsResponse">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="changeGroupsIdentifierRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="pairSourcedIdSet" type="q24:ArrayOfIdentifierPairDType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="changeGroupsIdentifierResponse">
+    <xs:complexType />
+  </xs:element>
+</xs:schema>

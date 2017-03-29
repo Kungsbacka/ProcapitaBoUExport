@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{265028D7-E3FF-4248-9BD0-B489C78A68B8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProcapitaBoUExport</RootNamespace>
+    <AssemblyName>ProcapitaBoUExport</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataTableFactory.cs" />
+    <Compile Include="IMSExtensions.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ProcapitaIMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\ProcapitaIMS\imsbasicservice.wsdl" />
+    <None Include="Service References\ProcapitaIMS\imsbasicservice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice1.wsdl" />
+    <None Include="Service References\ProcapitaIMS\imsbasicservice1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice2.wsdl" />
+    <None Include="Service References\ProcapitaIMS\imsbasicservice2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice3.wsdl" />
+    <None Include="Service References\ProcapitaIMS\imsbasicservice3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\imsbasicservice8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProcapitaIMS\IMSService.wsdl" />
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeGroupIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeGroupIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeGroupsIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeGroupsIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeMembershipIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeMembershipIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeMembershipsIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changeMembershipsIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changePersonIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changePersonIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changePersonsIdentifierHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.changePersonsIdentifierResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyPersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyPersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createByProxyPersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createPersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createPersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.createPersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupRelationshipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupRelationshipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupsRelationshipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupsRelationshipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deleteMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deletePersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deletePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deletePersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.deletePersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.extReadAllMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.extReadAllObjectsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.extReadBatchHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.extReadUpdatedMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.extVerifySystemRunningHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupsForPersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupsForPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsForGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsForGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsForPersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsForPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonsForGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonsForGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.readPersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replaceMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replacePersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replacePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replacePersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.replacePersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.syncResponseHeaderInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateGroupHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateGroupsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateMembershipHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateMembershipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateMembershipsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updateMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updatePersonHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updatePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updatePersonsHeaderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProcapitaIMS\ProcapitaBoUExport.ProcapitaIMS.updatePersonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProcapitaIMS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcapitaIMS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcapitaIMS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProcapitaIMS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

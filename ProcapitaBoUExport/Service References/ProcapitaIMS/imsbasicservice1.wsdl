@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/Imports">
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd6" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd3" namespace="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd0" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd2" namespace="http://www.imsglobal.org/services/pms/xsd/imsPersonManDataSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd4" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManMessSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd5" namespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" />
+      <xsd:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd7" namespace="http://www.imsglobal.org/services/mms/xsd/imsMemberManDataSchema_v1p0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createMembershipHeaderRequest">
+    <wsdl:part xmlns:q1="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createMembershipRequest" element="q1:createMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q2="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q2:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipHeaderResponse">
+    <wsdl:part xmlns:q3="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createMembershipResponse" element="q3:createMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q4="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q4:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipHeaderRequest">
+    <wsdl:part xmlns:q5="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createByProxyMembershipRequest" element="q5:createByProxyMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q6="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q6:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipHeaderResponse">
+    <wsdl:part xmlns:q7="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createByProxyMembershipResponse" element="q7:createByProxyMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q8="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q8:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipHeaderRequest">
+    <wsdl:part xmlns:q9="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="deleteMembershipRequest" element="q9:deleteMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q10="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q10:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipHeaderResponse">
+    <wsdl:part xmlns:q11="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="deleteMembershipResponse" element="q11:deleteMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q12="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q12:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipHeaderRequest">
+    <wsdl:part xmlns:q13="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipRequest" element="q13:readMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q14="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q14:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipHeaderResponse">
+    <wsdl:part xmlns:q15="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipResponse" element="q15:readMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q16="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q16:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipHeaderRequest">
+    <wsdl:part xmlns:q17="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="updateMembershipRequest" element="q17:updateMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q18="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q18:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipHeaderResponse">
+    <wsdl:part xmlns:q19="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="updateMembershipResponse" element="q19:updateMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q20="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q20:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipHeaderRequest">
+    <wsdl:part xmlns:q21="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="replaceMembershipRequest" element="q21:replaceMembershipRequest" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipHeaderRequest_Headers">
+    <wsdl:part xmlns:q22="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q22:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipHeaderResponse">
+    <wsdl:part xmlns:q23="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="replaceMembershipResponse" element="q23:replaceMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipHeaderResponse_Headers">
+    <wsdl:part xmlns:q24="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q24:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipIdentifierHeaderRequest">
+    <wsdl:part xmlns:q25="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="changeMembershipIdentifierRequest" element="q25:changeMembershipIdentifierRequest" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipIdentifierHeaderRequest_Headers">
+    <wsdl:part xmlns:q26="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q26:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipIdentifierHeaderResponse">
+    <wsdl:part xmlns:q27="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="changeMembershipIdentifierResponse" element="q27:changeMembershipIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipIdentifierHeaderResponse_Headers">
+    <wsdl:part xmlns:q28="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q28:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipsHeaderRequest">
+    <wsdl:part xmlns:q29="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createMembershipsRequest" element="q29:createMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q30="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q30:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipsHeaderResponse">
+    <wsdl:part xmlns:q31="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createMembershipsResponse" element="q31:createMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q32="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q32:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipsHeaderRequest">
+    <wsdl:part xmlns:q33="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createByProxyMembershipsRequest" element="q33:createByProxyMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q34="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q34:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipsHeaderResponse">
+    <wsdl:part xmlns:q35="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="createByProxyMembershipsResponse" element="q35:createByProxyMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createByProxyMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q36="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q36:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipsHeaderRequest">
+    <wsdl:part xmlns:q37="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="deleteMembershipsRequest" element="q37:deleteMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q38="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q38:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipsHeaderResponse">
+    <wsdl:part xmlns:q39="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="deleteMembershipsResponse" element="q39:deleteMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q40="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q40:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsHeaderRequest">
+    <wsdl:part xmlns:q41="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsRequest" element="q41:readMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q42="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q42:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsHeaderResponse">
+    <wsdl:part xmlns:q43="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsResponse" element="q43:readMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q44="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q44:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForPersonHeaderRequest">
+    <wsdl:part xmlns:q45="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsForPersonRequest" element="q45:readMembershipsForPersonRequest" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForPersonHeaderRequest_Headers">
+    <wsdl:part xmlns:q46="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q46:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForPersonHeaderResponse">
+    <wsdl:part xmlns:q47="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsForPersonResponse" element="q47:readMembershipsForPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForPersonHeaderResponse_Headers">
+    <wsdl:part xmlns:q48="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q48:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForGroupHeaderRequest">
+    <wsdl:part xmlns:q49="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsForGroupRequest" element="q49:readMembershipsForGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForGroupHeaderRequest_Headers">
+    <wsdl:part xmlns:q50="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q50:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForGroupHeaderResponse">
+    <wsdl:part xmlns:q51="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="readMembershipsForGroupResponse" element="q51:readMembershipsForGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="readMembershipsForGroupHeaderResponse_Headers">
+    <wsdl:part xmlns:q52="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q52:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipsHeaderRequest">
+    <wsdl:part xmlns:q53="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="updateMembershipsRequest" element="q53:updateMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q54="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q54:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipsHeaderResponse">
+    <wsdl:part xmlns:q55="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="updateMembershipsResponse" element="q55:updateMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q56="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q56:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipsHeaderRequest">
+    <wsdl:part xmlns:q57="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="replaceMembershipsRequest" element="q57:replaceMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipsHeaderRequest_Headers">
+    <wsdl:part xmlns:q58="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q58:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipsHeaderResponse">
+    <wsdl:part xmlns:q59="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="replaceMembershipsResponse" element="q59:replaceMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="replaceMembershipsHeaderResponse_Headers">
+    <wsdl:part xmlns:q60="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q60:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipsIdentifierHeaderRequest">
+    <wsdl:part xmlns:q61="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="changeMembershipsIdentifierRequest" element="q61:changeMembershipsIdentifierRequest" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipsIdentifierHeaderRequest_Headers">
+    <wsdl:part xmlns:q62="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncRequestHeaderInfo" element="q62:syncRequestHeaderInfo" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipsIdentifierHeaderResponse">
+    <wsdl:part xmlns:q63="http://www.imsglobal.org/services/mms/xsd/imsMemberManMessSchema_v1p0" name="changeMembershipsIdentifierResponse" element="q63:changeMembershipsIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeMembershipsIdentifierHeaderResponse_Headers">
+    <wsdl:part xmlns:q64="http://www.imsglobal.org/services/common/imsMessBindSchema_v1p0" name="syncResponseHeaderInfo" element="q64:syncResponseHeaderInfo" />
+  </wsdl:message>
+  <wsdl:portType name="MembershipManagementServiceSync">
+    <wsdl:operation name="createMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createMembership" name="createMembershipHeaderRequest" message="tns:createMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createMembershipResponse" name="createMembershipHeaderResponse" message="tns:createMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createByProxyMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createByProxyMembership" name="createByProxyMembershipHeaderRequest" message="tns:createByProxyMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createByProxyMembershipResponse" name="createByProxyMembershipHeaderResponse" message="tns:createByProxyMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/deleteMembership" name="deleteMembershipHeaderRequest" message="tns:deleteMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/deleteMembershipResponse" name="deleteMembershipHeaderResponse" message="tns:deleteMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembership" name="readMembershipHeaderRequest" message="tns:readMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipResponse" name="readMembershipHeaderResponse" message="tns:readMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/updateMembership" name="updateMembershipHeaderRequest" message="tns:updateMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/updateMembershipResponse" name="updateMembershipHeaderResponse" message="tns:updateMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="replaceMembership">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/replaceMembership" name="replaceMembershipHeaderRequest" message="tns:replaceMembershipHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/replaceMembershipResponse" name="replaceMembershipHeaderResponse" message="tns:replaceMembershipHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changeMembershipIdentifier">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/changeMembershipIdentifier" name="changeMembershipIdentifierHeaderRequest" message="tns:changeMembershipIdentifierHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/changeMembershipIdentifierResponse" name="changeMembershipIdentifierHeaderResponse" message="tns:changeMembershipIdentifierHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createMemberships" name="createMembershipsHeaderRequest" message="tns:createMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createMembershipsResponse" name="createMembershipsHeaderResponse" message="tns:createMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createByProxyMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/createByProxyMemberships" name="createByProxyMembershipsHeaderRequest" message="tns:createByProxyMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/createByProxyMembershipsResponse" name="createByProxyMembershipsHeaderResponse" message="tns:createByProxyMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/deleteMemberships" name="deleteMembershipsHeaderRequest" message="tns:deleteMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/deleteMembershipsResponse" name="deleteMembershipsHeaderResponse" message="tns:deleteMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMemberships" name="readMembershipsHeaderRequest" message="tns:readMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsResponse" name="readMembershipsHeaderResponse" message="tns:readMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readMembershipsForPerson">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembershipsForPerson" name="readMembershipsForPersonHeaderRequest" message="tns:readMembershipsForPersonHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsForPersonResponse" name="readMembershipsForPersonHeaderResponse" message="tns:readMembershipsForPersonHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="readMembershipsForGroup">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/readMembershipsForGroup" name="readMembershipsForGroupHeaderRequest" message="tns:readMembershipsForGroupHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/readMembershipsForGroupResponse" name="readMembershipsForGroupHeaderResponse" message="tns:readMembershipsForGroupHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/updateMemberships" name="updateMembershipsHeaderRequest" message="tns:updateMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/updateMembershipsResponse" name="updateMembershipsHeaderResponse" message="tns:updateMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="replaceMemberships">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/replaceMemberships" name="replaceMembershipsHeaderRequest" message="tns:replaceMembershipsHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/replaceMembershipsResponse" name="replaceMembershipsHeaderResponse" message="tns:replaceMembershipsHeaderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="changeMembershipsIdentifier">
+      <wsdl:input wsaw:Action="http://www.imsglobal.org/soap/mms/changeMembershipsIdentifier" name="changeMembershipsIdentifierHeaderRequest" message="tns:changeMembershipsIdentifierHeaderRequest" />
+      <wsdl:output wsaw:Action="http://www.imsglobal.org/services/mms/wsdl/imsMemberManAbstractSync_v1p0/MembershipManagementServiceSync/changeMembershipsIdentifierResponse" name="changeMembershipsIdentifierHeaderResponse" message="tns:changeMembershipsIdentifierHeaderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

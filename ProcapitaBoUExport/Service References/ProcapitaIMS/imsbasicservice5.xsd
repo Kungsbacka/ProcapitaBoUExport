@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" elementFormDefault="qualified" targetNamespace="http://www.imsglobal.org/services/gms/xsd/imsGroupManDataSchema_v1p0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://imsserver/HCW.Welfare.CustomSolutions.Integration.IISHost/V1/imsbasicservice.svc?xsd=xsd1" namespace="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" />
+  <xs:complexType name="GroupDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="groupType" type="tns:GroupTypeDType" />
+      <xs:element xmlns:q1="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="recordInfo" type="q1:RecordMetaDataDType" />
+      <xs:element xmlns:q2="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q2:email" />
+      <xs:element xmlns:q3="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q3:URL" />
+      <xs:element xmlns:q4="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="timeFrame" type="q4:TimeFrameDType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="relationship" type="tns:RelationshipDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="enrollControl" type="tns:EnrollControlDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="org" type="tns:OrgDType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="tns:DescriptionDType" />
+      <xs:element xmlns:q5="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q5:dataSource" />
+      <xs:element xmlns:q6="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" name="extension" type="q6:ArrayOfExtensionField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GroupTypeDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="scheme" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="typeValue" type="tns:TypeValueDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeValueDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="type" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="level" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RelationshipDType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="relation">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="KnownAs" />
+            <xs:enumeration value="Parent" />
+            <xs:enumeration value="Child" />
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="sourceId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://www.imsglobal.org/services/common/imsCommonSchema_v1p0" minOccurs="0" maxOccurs="1" ref="q7:identifier" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="label" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnrollControlDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="enrollAccept" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="enrollAllowed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrgDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="orgName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="orgUnit" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="orgType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DescriptionDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="descShort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="descLong" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="descFull" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
