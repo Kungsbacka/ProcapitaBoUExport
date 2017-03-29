@@ -12,15 +12,12 @@ namespace ProcapitaBoUExport
             {
                 return null;
             }
-            ArrayOfExtensionFieldExtensionField extensionField = extension.FirstOrDefault(field => field.fieldName.Equals(fieldName, StringComparison.OrdinalIgnoreCase));
-            if (extensionField != null)
-            {
-                return string.IsNullOrWhiteSpace(extensionField.fieldValue) ? null : extensionField.fieldValue;
-            }
-            else
+            var extensionField = extension.FirstOrDefault(field => field.fieldName.Equals(fieldName, StringComparison.OrdinalIgnoreCase));
+            if (string.IsNullOrWhiteSpace(extensionField?.fieldValue))
             {
                 return null;
             }
+            return extensionField.fieldValue;
         }
 
         public static string GetNamePart(this NameDType name, string partType)
@@ -29,15 +26,12 @@ namespace ProcapitaBoUExport
             {
                 return null;
             }
-            NameDTypePartName partName = name.partName.FirstOrDefault(part => part.namePartType.Equals(partType, StringComparison.OrdinalIgnoreCase));
-            if (partName != null)
-            {
-                return string.IsNullOrWhiteSpace(partName.namePartValue) ? null : partName.namePartValue;
-            }
-            else
+            var partName = name.partName.FirstOrDefault(part => part.namePartType.Equals(partType, StringComparison.OrdinalIgnoreCase));
+            if (string.IsNullOrWhiteSpace(partName?.namePartValue))
             {
                 return null;
             }
+            return partName.namePartValue;
         }
 
         public static InstitutionRoleDTypeInstitutionRoleType GetPrimaryRole(this InstitutionRoleDType[] roles)
@@ -46,16 +40,12 @@ namespace ProcapitaBoUExport
             {
                 return InstitutionRoleDTypeInstitutionRoleType.Other;
             }
-            InstitutionRoleDType primaryRole = roles.FirstOrDefault(role => role.primaryRoleType);
-            if (primaryRole != null)
-            {
-                return primaryRole.institutionRoleType;
-
-            }
-            else
+            var primaryRole = roles.FirstOrDefault(role => role.primaryRoleType);
+            if (primaryRole == null)
             {
                 return InstitutionRoleDTypeInstitutionRoleType.Other;
             }
+            return primaryRole.institutionRoleType;
         }
     }
 }
