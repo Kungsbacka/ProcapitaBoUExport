@@ -1,5 +1,6 @@
 ﻿using System;
 using CommandLine;
+using CommandLine.Text;
 
 namespace ProcapitaBoUExport
 {
@@ -18,8 +19,7 @@ namespace ProcapitaBoUExport
         [HelpOption]
         public string GetUsage()
         {
-            return CommandLine.Text.HelpText.AutoBuild(this,
-              (CommandLine.Text.HelpText current) => CommandLine.Text.HelpText.DefaultParsingErrorsHandler(this, current));
+            return HelpText.AutoBuild(this, (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
         }
     }
 }

@@ -9,19 +9,19 @@ namespace ProcapitaBoUExport
 {
     class Program
     {
-        private static Options _options;
+        static Options options;
 
         static void Main(string[] args)
         {
-            _options = new Options();
+            options = new Options();
             DateTime searchDate;
-            if (!CommandLine.Parser.Default.ParseArguments(args, _options))
+            if (!CommandLine.Parser.Default.ParseArguments(args, options))
             {
                 return;
             }
-            if (_options.SearchDate.HasValue)
+            if (options.SearchDate.HasValue)
             {
-                searchDate = _options.SearchDate.Value.Date;
+                searchDate = options.SearchDate.Value.Date;
             }
             else
             {
@@ -40,16 +40,19 @@ namespace ProcapitaBoUExport
             }
             Print("Search date: {0}", searchDate.ToString("yyyy-MM-dd"));
             DateTime startExecutionTime = DateTime.Now;
-            Print("Truncating export table...");
-
-            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MetaDirectory"].ConnectionString))
+            string truncateQuery = ConfigurationManager.AppSettings["TruncateQuery"];
+            if (!string.IsNullOrWhiteSpace(truncateQuery))
             {
-                conn.Open();
-                using (var cmd = new SqlCommand())
+                Print("Truncating export table...");
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MetaDirectory"].ConnectionString))
                 {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "TRUNCATE TABLE MetaDirectory.dbo.ProcapitaBoUExport";
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    using (var cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = truncateQuery;
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
             var allUnits = GetAllUnitNames(searchDate);
@@ -239,7 +242,7 @@ namespace ProcapitaBoUExport
 
         private static void Print(string msg, params object[] args)
         {
-            if (_options.Verbose)
+            if (options.Verbose)
             {
                 Console.WriteLine(msg, args);
             }

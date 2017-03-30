@@ -12,6 +12,9 @@ Console program that uses IMS Enterprise to export students, faculty and groups 
 * Connection string - replace [DATABAS SERVER] and [DATABASE NAME] with the server and database name for the destination database.
 * [SERVER]:[PORT] - Server and port for the IMS Enterprise web service.
 * [DOMAIN ID] - Customer specific domain ID (ask your vendor if you don't have this).
+* TruncateQuery - This SQL statement is run against the destination database to prepare the export table.
+  You can change this to any statement you want, like a DELETE statement. If you leave it empty it will be ignored.
+* DestinationTable - Change this if you named the destination table something other than ProcapitaBoUExport.
 
 ## Command line arguments
     -s, --searchdate    Search date.
