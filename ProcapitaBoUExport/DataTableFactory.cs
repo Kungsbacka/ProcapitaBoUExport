@@ -34,6 +34,7 @@ namespace ProcapitaBoUExport
             dt.Columns.Add(new DataColumn("gatuadress", typeof(string)));
             dt.Columns.Add(new DataColumn("postnummer", typeof(string)));
             dt.Columns.Add(new DataColumn("postort", typeof(string)));
+            dt.Columns.Add(new DataColumn("telefon", typeof(string)));
             dt.Columns.Add(new DataColumn("vh1", typeof(string)));
             dt.Columns.Add(new DataColumn("vh2", typeof(string)));
             dt.Columns.Add(new DataColumn("uttagsdatum", typeof(DateTime)));

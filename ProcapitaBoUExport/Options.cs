@@ -13,6 +13,9 @@ namespace ProcapitaBoUExport
             HelpText = "Prints all messages to standard output.")]
         public bool Verbose { get; set; }
 
+        [Option('u', "singleUnit", HelpText = "Unit name. Fetch only this unit")]
+        public string SingleUnit { get; set; }
+
         [ParserState]
         public IParserState LastParserState { get; set; }
 

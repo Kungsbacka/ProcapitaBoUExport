@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+using System.Linq;
 using ProcapitaBoUExport.ProcapitaIMS;
 
 namespace ProcapitaBoUExport
@@ -55,7 +56,15 @@ namespace ProcapitaBoUExport
                     }
                 }
             }
-            var allUnits = GetAllUnitNames(searchDate);
+            List<string> allUnits;
+            if (string.IsNullOrEmpty(options.SingleUnit))
+            {
+                allUnits = GetAllUnitNames(searchDate);
+            }
+            else
+            {
+                allUnits = new List<string>() { options.SingleUnit };
+            }
             foreach (string unitName in allUnits)
             {
                 StoreUnit(unitName, searchDate);
@@ -177,11 +186,18 @@ namespace ProcapitaBoUExport
                         row["gatuadress"] = person?.address?.street[0];
                         row["postnummer"] = person?.address.postcode;
                         row["postort"] = person?.address.locality;
+                        if (person?.tel?.Length > 0)
+                        {
+                            var phone = string.Join(",", person.tel.Select(t => t.telValue.Trim()).Where(t => !string.IsNullOrEmpty(t)).ToArray());
+                            if (!string.IsNullOrEmpty(phone))
+                            {
+                                row["telefon"] = phone;
+                            }
+                        }
                         row["vh1"] = person?.extension.GetFieldValue("CareholderOne");
                         row["vh2"] = person?.extension.GetFieldValue("CareholderTwo");
-                        GroupDType group;
                         string groupIdentifier = membership.groupSourcedId.identifier;
-                        while (groupDict.TryGetValue(groupIdentifier, out group))
+                        while (groupDict.TryGetValue(groupIdentifier, out GroupDType group))
                         {
                             switch ((group.extension.GetFieldValue("GroupType") ?? "").ToLower())
                             {
