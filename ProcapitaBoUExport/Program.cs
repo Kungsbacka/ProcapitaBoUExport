@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Linq;
 using ProcapitaBoUExport.ProcapitaIMS;
+using CommandLine;
 
 namespace ProcapitaBoUExport
 {
@@ -14,12 +15,12 @@ namespace ProcapitaBoUExport
 
         static void Main(string[] args)
         {
-            options = new Options();
-            DateTime searchDate;
-            if (!CommandLine.Parser.Default.ParseArguments(args, options))
+            Parser.Default.ParseArguments<Options>(args).WithParsed(o => options = o);
+            if (options == null)
             {
                 return;
             }
+            DateTime searchDate;
             if (options.SearchDate.HasValue)
             {
                 searchDate = options.SearchDate.Value.Date;
@@ -41,41 +42,36 @@ namespace ProcapitaBoUExport
             }
             Print("Search date: {0}", searchDate.ToString("yyyy-MM-dd"));
             DateTime startExecutionTime = DateTime.Now;
-            string truncateQuery = ConfigurationManager.AppSettings["TruncateQuery"];
-            if (!string.IsNullOrWhiteSpace(truncateQuery))
-            {
-                Print("Truncating export table...");
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MetaDirectory"].ConnectionString))
-                {
-                    conn.Open();
-                    using (var cmd = new SqlCommand())
-                    {
-                        cmd.Connection = conn;
-                        cmd.CommandText = truncateQuery;
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
+            // Print("Executing pre export stored procedure (if any)...");
+            // ExecuteStoredProcedure("PreExport");
             List<string> allUnits;
-            if (string.IsNullOrEmpty(options.SingleUnit))
+            if (!string.IsNullOrEmpty(options.SingleUnit))
             {
-                allUnits = GetAllUnitNames(searchDate);
+                allUnits = new List<string>() { options.SingleUnit };
+            }
+            else if (options.Units.Any())
+            {
+                allUnits = options.Units.ToList();
             }
             else
             {
-                allUnits = new List<string>() { options.SingleUnit };
+                allUnits = GetAllUnitNames(searchDate);
             }
             foreach (string unitName in allUnits)
             {
                 StoreUnit(unitName, searchDate);
             }
+
+            // Print("Executing post export stored procedure (if any)...");
+            // ExecuteStoredProcedure("PostExport");
+
             Print("Time elapsed: {0}", DateTime.Now - startExecutionTime);
 #if DEBUG
             Console.ReadLine();
 #endif
         }
 
-        private static List<string> GetAllUnitNames(DateTime searchDate)
+        static List<string> GetAllUnitNames(DateTime searchDate)
         {
             var unitList = new List<string>();
             using (var membershipClient = new MembershipManagementServiceSyncClient())
@@ -117,7 +113,7 @@ namespace ProcapitaBoUExport
             return unitList;
         }
 
-        private static void StoreUnit(string unitName, DateTime searchDate)
+        static void StoreUnit(string unitName, DateTime searchDate)
         {
             Print(unitName);
             var dataTable = DataTableFactory.CreateDataTable();
@@ -256,7 +252,26 @@ namespace ProcapitaBoUExport
             }
         }
 
-        private static void Print(string msg, params object[] args)
+        static void ExecuteStoredProcedure(string name)
+        {
+            string storedProcedure = ConfigurationManager.AppSettings[name];
+            if (!string.IsNullOrEmpty(storedProcedure))
+            {
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MetaDirectory"].ConnectionString))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = storedProcedure;
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        static void Print(string msg, params object[] args)
         {
             if (options.Verbose)
             {

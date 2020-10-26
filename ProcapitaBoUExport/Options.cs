@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using CommandLine;
-using CommandLine.Text;
 
 namespace ProcapitaBoUExport
 {
@@ -9,20 +9,13 @@ namespace ProcapitaBoUExport
         [Option('s', "searchdate", HelpText = "Search date.")]
         public DateTime? SearchDate { get; set; }
 
-        [Option('v', "verbose", DefaultValue = false,
-            HelpText = "Prints all messages to standard output.")]
+        [Option('v', "verbose", Default = false, HelpText = "Prints all messages to standard output.")]
         public bool Verbose { get; set; }
 
-        [Option('u', "singleUnit", HelpText = "Unit name. Fetch only this unit")]
+        [Option('u', "singleUnit", SetName = "single", HelpText = "Unit name. Fetch only this unit.")]
         public string SingleUnit { get; set; }
 
-        [ParserState]
-        public IParserState LastParserState { get; set; }
-
-        [HelpOption]
-        public string GetUsage()
-        {
-            return HelpText.AutoBuild(this, (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
-        }
+        [Option('m', "multipleUnits", SetName = "multiple", HelpText = "List of unit names. Fetch only units in list.")]
+        public IEnumerable<string> Units { get; set; }
     }
 }
